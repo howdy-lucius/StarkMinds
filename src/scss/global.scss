@@ -107,14 +107,11 @@ marquee {
 .s-header-stark,
 .s-header-minds {
     position: fixed;
-    font-size: 100px;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
 
     svg {
         width: 100%;
         overflow: visible;
+        filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));
     }
 
     #minds-logo {
@@ -212,16 +209,18 @@ marquee {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 500px;
+        min-height: 1000px;
         text-transform: uppercase;
         position: relative;
+        overflow: hidden;
 
         &-header {
-            border: 3px solid $stark-grey;
-            padding: 12px;
-            font-size: 2rem;
+            border: 5px solid $stark-midgrey;
+            padding: 1rem 3rem;
+            font-size: 3rem;
             color: $stark-red;
             margin-bottom: 3rem;
+            font-weight: 900;
         }
 
         &-titles {
@@ -233,6 +232,16 @@ marquee {
                 font-size: 1.5rem;
             }
         }
+    }
+}
+
+.type-section {
+    width: 50%;
+
+    .react-typewriter-text {
+        text-align: center;
+        color: $stark-grey;
+        font-size: 24px;
     }
 }
 
@@ -257,21 +266,46 @@ marquee {
         border: $border-bottom;
     }
 
+    &-25,
+    &-50,
+    &-75 {
+        width: 100%;
+        min-height: 300px;
+    }
     &-25 {
-        width: 25%;
+        @media(min-width: $tablet) {
+            width: 25%;
+            min-height: none;
+        }
     }
 
     &-75 {
-        width: 75%;
+        @media(min-width: $tablet) {
+            width: 75%;
+            min-height: none;
+        }
     }
 
     &-50 {
-        width: 50%;
+        @media(min-width: $tablet) {
+            width: 50%;
+            min-height: none;
+        }
     }
 
     &-100 {
         width: 100%;
         display: flex;
+    }
+
+    &-neon {
+        display: none;
+
+        @media(min-width: $tablet) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     &-dotted {
@@ -539,10 +573,8 @@ h1 {
 }
 
 .logo-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    opacity: .1;
     
     svg {
         width: 50%;
@@ -589,4 +621,103 @@ h1 {
     display: flex;
     width: 100%;
     justify-content: space-around;
+}
+
+.neon-logo {
+    width: 100%;
+    animation-duration: 5s;
+    animation-name: neon;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    svg {
+        overflow: visible;
+    }
+}
+
+.neon-glow {
+    filter: blur(10px);
+    animation-duration: 5s;
+    animation-name: neon;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes neon {
+    from {
+        opacity: .8;
+    }
+
+    16% {
+        opacity: .8;
+    }
+    19% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: .3
+    }
+
+    50% {
+        opacity: .3;
+    }
+
+    70% {
+        opacity: .3;
+    }
+
+    73% {
+        opacity: 1;
+    }
+
+    74% {
+        opacity: .3;
+    }
+
+    to {
+        opacity: .8;
+    }
+}
+@keyframes glow {
+    from {
+        opacity: .8;
+    }
+
+    16% {
+        opacity: .8;
+    }
+    19% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    73% {
+        opacity: 1;
+    }
+
+    74% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .8;
+    }
 }

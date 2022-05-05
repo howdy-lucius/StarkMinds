@@ -14,7 +14,6 @@ function Clients() {
                 <ITMap />
                 <SOMap />
             </div>
-            <BackgroundGlobe />
         </div>
     )
 }

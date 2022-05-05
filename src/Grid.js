@@ -1,7 +1,7 @@
 import Bars from'./Bars';
 import Block from './Block';
 import Marquee from './Marquee';
-import Logo from './components/Logo';
+import NeonLogo from './components/NeonLogo';
 
 function Grid() {
     return (
@@ -16,8 +16,8 @@ function Grid() {
                 <p className="founded-text">was founded in 2021</p>
                 <p className="founded-subtext">(after years of consideration and planning)</p>
             </div>
-            <div className="block-decorative block-25 block block-title-row">
-                <Logo color="light" />
+            <div className="block-25 block block-title-row block-neon">
+                <NeonLogo />
             </div>
                 <div className="block-100 what-we-do">
                     <div className="block block-title block-25">

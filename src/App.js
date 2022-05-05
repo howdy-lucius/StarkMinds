@@ -7,6 +7,8 @@ import Contact from './components/Contact';
 import Animation from './components/Animation';
 import WeAre from './components/WeAre';
 import Minds from './components/Minds';
+import TextLogoStark from './components/TextLogoStark';
+import HowDidWeGetHere from './components/HowDidWeGetHere';
 
 function App() {
   return (
@@ -17,10 +19,10 @@ function App() {
         <h1>Stark Minds</h1>
         <h3>CONNECTING THE DOTS</h3>
       </header>
-      <div className="s-header-stark">Stark</div>
+      <TextLogoStark />
       <Minds />
       <WeAre />
-      <div className="how-did-we-get-here section-spacer">...So how did we get here?</div>
+      <HowDidWeGetHere />
       <Grid />
       <Clients />
       <HowWeThink />
