@@ -106,22 +106,52 @@ marquee {
 
 .s-header-stark,
 .s-header-minds {
-    font-size: 250px;
+    position: fixed;
+    font-size: 100px;
     font-weight: 700;
     margin: 0;
     padding: 0;
+
+    svg {
+        width: 100%;
+        overflow: visible;
+    }
+
+    #minds-logo {
+        animation-duration: 20s;
+        animation-name: rotatelogo;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+}
+
+@keyframes rotatelogo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .s-header-stark {
-    top: -3rem;
-    left: -1rem;
+    top: 1.5rem;
+    left: 3rem;
     z-index: 2;
 }
 
 .s-header-minds {
-    bottom: 0;
-    right: -1rem;
+    bottom: 1.5rem;
+    right: 3rem;
     z-index: 2;
+}
+
+.s-header {
+    z-index: 3;
 }
 
 .s-footer {
@@ -184,6 +214,7 @@ marquee {
         align-items: center;
         min-height: 500px;
         text-transform: uppercase;
+        position: relative;
 
         &-header {
             border: 3px solid $stark-grey;
@@ -302,8 +333,8 @@ marquee {
 
     @media(min-width: $phone) and (max-width: $tablet) {
         // between phone and tablet
-        left: -25%;
-        right: -25%;
+        left: -33%;
+        right: -33%;
     }
 
     @media(min-width: $tablet) and (max-width: $desktop) {
