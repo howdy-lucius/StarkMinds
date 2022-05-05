@@ -1,20 +1,20 @@
-import logo from './logo.svg';
 import './scss/global.scss';
-import Palette from './Palette';
 import BackgroundGlobe from './BackgroundGlobe';
 import Grid from './Grid';
 import Clients from './Clients';
 import HowWeThink from './components/HowWeThink';
 import Contact from './components/Contact';
 import TypeWriter from './components/TypeWriter';
+import Animation from './components/Animation';
 
 function App() {
 
   return (
     <div className="App">
       <header className="s-header">
-        <p className="s-header-stark" onMouseOver={() => console.log('stark')}>Stark</p>
-        <p className="s-header-minds">Minds</p>
+        <Animation />
+        <h1>Stark Minds</h1>
+        <h3>CONNECTING THE DOTS</h3>
         <BackgroundGlobe />
       </header>
       <div className="s-section-we-are section">

@@ -1,16 +1,17 @@
 import Paper from "paper";
+import variables from "../scss/_exports.module.scss";
 
 const draw1 = () => {
+  console.log(variables);
   let myPath = new Paper.Path();
 
   Paper.view.onMouseDown = (event) => {
-    console.log('on mouse down');
-    myPath.strokeColor = "#737373";
+    myPath = new Paper.Path();
+    myPath.strokeColor = variables['stark-grey'];
     myPath.strokeWidth = 5;
   };
 
   Paper.view.onMouseDrag = (event) => {
-    console.log('on mouse down');
     myPath.add(event.point);
   };
 

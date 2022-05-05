@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import Paper from 'paper';
-import draw1 from './draw1';
+import Draw from './Draw';
 
 const Canvas = props => {
   
@@ -9,8 +9,7 @@ const Canvas = props => {
   useEffect(() => {
     const canvas = canvasRef.current;
     Paper.setup(canvas);
-    draw1();
-    console.log('hey there')
+    Draw();
   }, []);
   
   return <canvas ref={canvasRef} {...props} id="canvas" resize="true" />
