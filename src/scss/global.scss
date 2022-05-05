@@ -409,11 +409,22 @@ marquee {
     width: 100%;
     .bar {
         align-self: stretch;
-        width: 2px;
-        background-color: $stark-grey;
+        flex: 1;
 
-        &:hover {
-            background-color: $stark-red;
+        &:hover,
+        &.active {
+            .inner-bar {
+                width: 100%;
+                background-color: $stark-red;
+            }
+        }
+
+        .inner-bar {
+            width: 2%;
+            height: 100%;
+            align-self: stretch;
+            background-color: $stark-grey;
+            transition: all 2s ease;
         }
     }
 }

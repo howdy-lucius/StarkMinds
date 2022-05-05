@@ -1,22 +1,14 @@
+import InnerBar from './components/InnerBar';
+
 function Bars() {
     return (
         <div className="bars-container">
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
+            <InnerBar />
+            <InnerBar />
+            <InnerBar />
+            <InnerBar />
+            <InnerBar />
+            <InnerBar />
         </div>
     )
 }
