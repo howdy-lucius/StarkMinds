@@ -1,32 +1,30 @@
 import './scss/global.scss';
-import BackgroundGlobe from './BackgroundGlobe';
-import Grid from './Grid';
-import Clients from './Clients';
-import HowWeThink from './components/HowWeThink';
-import Contact from './components/Contact';
-import Animation from './components/Animation';
-import WeAre from './components/WeAre';
+import Grid from './components/sections/grid/Grid';
+import HowWeThink from './components/sections/HowWeThink/HowWeThink';
+import Contact from './components/sections/contact/Contact';
+import WeAre from './components/sections/WeAre/WeAre';
 import Minds from './components/Minds';
 import TextLogoStark from './components/TextLogoStark';
-import HowDidWeGetHere from './components/HowDidWeGetHere';
+import HowDidWeGetHere from './components/sections/howDidWeGetHere/HowDidWeGetHere';
+import Header from './components/sections/header/Header';
+import Clients from './components/sections/Clients/Clients';
+import Mission from './components/sections/Mission/Mission';
 
 function App() {
   return (
     <div className="App">
-      <header className="s-header">
-        <BackgroundGlobe />
-        <Animation />
-        <h1>Stark Minds</h1>
-        <h3>CONNECTING THE DOTS</h3>
-      </header>
-      <TextLogoStark />
-      <Minds />
-      <WeAre />
-      <HowDidWeGetHere />
-      <Grid />
-      <Clients />
-      <HowWeThink />
-      <Contact />
+      <Header />
+      <div class="over-bleed">
+        <TextLogoStark />
+        <Minds />
+        <WeAre />
+        <HowDidWeGetHere />
+        <Mission />
+        <Grid />
+        <Clients />
+        <HowWeThink />
+        <Contact />
+      </div>
     </div>
   );
 }

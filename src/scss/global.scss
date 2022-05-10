@@ -25,15 +25,9 @@ $tablet: 768px;
 $desktop: 1024px;
 $xl: 1920px;
 
-#root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-body {
-    background-color: $stark-grey;
+.over-bleed {
     padding: 3.25rem;
+    background-color: $stark-grey;
 }
 
 * {
@@ -51,6 +45,7 @@ header {
     justify-content: center;
     flex-direction: column;
     color: $stark-light;
+    width: 100vw;
 
     h1 {
         color: $stark-light;
@@ -63,6 +58,12 @@ marquee {
     background-color: $stark-dark;
     position: absolute;
     padding: 1rem 0;
+    width: 500%;
+    font-size: 1.5rem;
+
+    @media(min-width: $tablet) {
+        width: 200%;
+    }
 }
 
 .marq {
@@ -95,6 +96,19 @@ marquee {
     display: flex;
     background-color: $stark-dark;
     overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: all ease .25s;
+    
+    h1,
+    h2,
+    p,
+    marquee,
+    .block-number,
+    .block-title,
+    .block {
+        font-family: 'Share Tech Mono', monospace;
+    }
 }
 
 .grid {
@@ -209,7 +223,7 @@ marquee {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 1000px;
+        min-height: 1250px;
         text-transform: uppercase;
         position: relative;
         overflow: hidden;
@@ -221,6 +235,8 @@ marquee {
             color: $stark-red;
             margin-bottom: 3rem;
             font-weight: 900;
+            background-color: $white;
+            z-index: 2;
         }
 
         &-titles {
@@ -237,6 +253,7 @@ marquee {
 
 .type-section {
     width: 50%;
+    min-height: 6rem;
 
     .react-typewriter-text {
         text-align: center;
@@ -246,21 +263,33 @@ marquee {
 }
 
 .how-did-we-get-here {
-    background-color: $stark-dark;
-    color: $stark-light;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 12rem 0;
     font-size: 3rem;
+    min-height: 15rem;
+
+    .react-typewriter-text {
+        font-style: italic;
+        color: $stark-dark;
+    }
+
+    .react-typewriter-pointer {
+        display: none;
+    }
 }
 
 .block {
     align-self: stretch;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 1rem;
     border-left: $border-bottom;
     border-right: $border-bottom;
+
+    @media(min-width: $desktop) {
+        padding: 2rem;
+    }
 
     &-title-row {
         border: $border-bottom;
@@ -296,6 +325,7 @@ marquee {
     &-100 {
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
     }
 
     &-neon {
@@ -324,6 +354,15 @@ marquee {
         flex-direction: column;
         position: relative;
         color: $white;
+        font-size: 10vw;
+
+        @media(min-width: $tablet) {
+            font-size: 4vw;
+        }
+
+        @media(min-width: $desktop) {
+            font-size: 2.5vw;
+        }
     }
 
     &-number {
@@ -338,6 +377,7 @@ marquee {
         width: 2rem;
         height: 2rem;
         border-radius: 100%;
+        font-size: 1rem;
     }
 
     &-decorative {
@@ -348,6 +388,12 @@ marquee {
     &-content {
         color: $stark-grey;
         font-size: $p-size;
+        display: flex;
+        align-items: center;
+
+        p {
+            line-height: 2;
+        }
     }
 
     &-title {
@@ -524,17 +570,26 @@ marquee {
 }
 
 .drawing-canvas {
-    width: 500px;
-    height: 400px;
+    width: 50%;
+    min-width: 300px;
+    height: 500px;
     border: 3px solid $stark-red;
     cursor: url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg id='a' xmlns='http://www.w3.org/2000/svg' width='49.5' height='49.5' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 49.5 49.5'%3E%3Cdefs%3E%3Cstyle%3E.c%7BclipPath:url(%23b);%7D.d%7Bfill:none;%7D.e%7Bfill:%23f13d3d;%7D%3C/style%3E%3CclipPath id='b'%3E%3Crect x='.35' width='49.15' height='49.5' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clipPath='%23b'%3E%3Cpath d='M8.53,.04C10.8,.04,12.95,.93,14.56,2.54l31.27,31.27c.11,.11,.18,.24,.22,.39l3.35,14.25c.06,.28-.02,.57-.22,.77-.15,.15-.37,.24-.58,.24-.06,0-.13,0-.19-.02l-14.25-3.35c-.15-.04-.29-.11-.39-.22L2.5,14.6c-1.61-1.61-2.5-3.75-2.5-6.03C0,3.87,3.83,.04,8.53,.04m-1,17.26l2.77-2.77h0l6.96-6.96-2.19-2.19L5.34,15.11l2.19,2.19Zm37.26,18.75h-4.58v3.37c0,.46-.37,.82-.82,.82h-3.37v4.59l5.16,1.22c.22-1.12,.83-2.23,1.76-3.15,.91-.9,1.99-1.48,3.08-1.69l-1.22-5.16ZM18.42,8.73l-2.19,2.19,23.48,23.48h4.37L18.42,8.73Zm17.1,29.86h3.03v-3.02L15.07,12.09l-3.02,3.02,23.48,23.48Zm10.86,4.24c-.78,.12-1.61,.55-2.29,1.23-.7,.7-1.17,1.55-1.32,2.36l4.72,1.11-1.11-4.7Zm-12.02,1.3v-4.38L10.88,16.27l-2.19,2.19,25.67,25.67ZM3.66,13.43l.51,.51L13.91,4.22l-.51-.52c-1.3-1.3-3.03-2.01-4.87-2.01C4.73,1.69,1.65,4.77,1.65,8.57c0,1.84,.71,3.57,2.01,4.87Z' fill='%23f13d3d'/%3E%3Cpath d='M4.7,5.22c.32,.32,.32,.84,0,1.16-1.04,1.04-1.04,2.73,0,3.78,.32,.32,.32,.84,0,1.16-.16,.16-.37,.24-.58,.24s-.42-.08-.58-.24c-1.68-1.68-1.68-4.42,0-6.11,.32-.32,.84-.32,1.16,0' fill='%23f13d3d'/%3E%3C/g%3E%3C/svg%3E")49.5 49.5, auto;
     background-color: $white;
-    z-index: 2;
+    position: relative;
     
     #canvas {
         width: 100%;
-        height: 400px;
+        height: 100%;
     }
+}
+
+.canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .what-we-do {
@@ -546,10 +601,14 @@ marquee {
 
     h2 {
         color: $stark-grey;
-        font-size: 3rem;
+        font-size: 4vw;
         text-transform: uppercase;
         margin: 0;
         padding: 0;
+
+        @media(min-width: $desktop) {
+            font-size: 2.5vw;
+        }
     }
 
     p {
@@ -564,23 +623,50 @@ marquee {
     width: 50%;
 }
 
+.grid-sizer {
+    max-width: 1200px;
+    display: flex;
+}
+
 h1 {
     color: $stark-red;
     padding: 0;
     margin: 0;
-    font-size: 4rem;
+    font-size: 9vw;
+    text-align: center;
+
+    @media(min-width: $tablet) {
+        font-size: 5vw;
+    }
+
+    @media(min-width: $desktop) {
+        font-size: 4vw;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 3vw;
+    }
 }
 
 .founded-text {
-    font-size: 2rem;
+    font-size: 3vw;
     text-transform: none;
     padding: 0;
     margin: 0;
+
+    @media(min-width: $tablet) {
+        font-size: 2vw;
+    }
+
+    @media(min-width: $desktop) {
+        font-size: 1.5vw;
+    }
 }
 
 .founded-subtext {
     text-transform: none;
     color: $stark-grey;
+    font-size: 1rem;
 }
 
 .logo-container {
@@ -617,7 +703,7 @@ h1 {
         box-shadow: none;
         resize: none;
         width: 100%;
-        height: 250px;
+        height: 500px;
     }
 }
 
@@ -635,7 +721,7 @@ h1 {
 }
 
 .neon-logo {
-    width: 100%;
+    width: 50%;
     animation-duration: 5s;
     animation-name: neon;
     animation-timing-function: linear;
@@ -730,5 +816,16 @@ h1 {
 
     to {
         opacity: .8;
+    }
+}
+
+.puzzle {
+    height: 100%;
+    width: 100%;
+    transition: all ease .5s;
+    position: absolute;
+
+    g {
+        transition: all ease .5s;
     }
 }
