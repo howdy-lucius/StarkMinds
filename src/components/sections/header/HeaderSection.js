@@ -1,9 +1,9 @@
 import BackgroundGlobe from '../../common/BackgroundGlobe';
 import Animation from './Animation';
 
-function Header() {
+function HeaderSection() {
   return (
-      <header className="s-header">
+      <header className="header-section">
         <BackgroundGlobe />
         <Animation />
         <h1>stark minds</h1>
@@ -12,4 +12,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderSection;

@@ -1,12 +1,13 @@
 import Canvas from './Canvas';
 import Puzzle from './Puzzle';
 
-function HowWeThink() {
+function HowWeThinkSection() {
     return (
-        <div className="section section-howwethink">
+        <div className="section how-we-think">
             <h2>How We Think</h2>
             <p>
                 Outcomes over egos<br></br>
+                Take five deep breaths <br></br>
                 Measure Twice, Cut once <br></br>
                 Talk it out, hit the books <br></br>
             </p>
@@ -14,8 +15,10 @@ function HowWeThink() {
             <div className="drawing-canvas">
                 <Puzzle />
             </div>
+            <p className="if-all-else">If all else fails:</p>
+            <p className="blow-it-up-text">BLOW IT UP AND START OVER</p>
         </div>
     )
 }
 
-export default HowWeThink;
+export default HowWeThinkSection;

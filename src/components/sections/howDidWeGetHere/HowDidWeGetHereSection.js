@@ -1,7 +1,7 @@
 import TypeWriterEffect from 'react-typewriter-effect';
 import React from 'react';
 
-const HowDidWeGetHere = () => {
+const HowDidWeGetHereSection = () => {
     const myRef = document.querySelector('how-did-we-get-here section-spacer');
 
     return (
@@ -16,4 +16,4 @@ const HowDidWeGetHere = () => {
 
 }
 
-export default HowDidWeGetHere;
+export default HowDidWeGetHereSection;

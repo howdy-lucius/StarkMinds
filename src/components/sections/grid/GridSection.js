@@ -4,9 +4,9 @@ import Marquee from './Marquee';
 import NeonLogo from './NeonLogo';
 import variables from '../../../scss/_exports.module.scss';
 
-function Grid() {
+function GridSection() {
     return (
-        <div className="grid-container section-spacer">
+        <div className="grid-section section-spacer">
             <div className="grid-sizer">
                 <Marquee />
                 <div className="grid">
@@ -29,18 +29,18 @@ function Grid() {
                             <p>By studying complimentary ecoystems and carefully selecting partners we can make calm, catchy, calculated decisions</p>
                         </div>
                     </div>
-                    <Block title="Talent" svg="spark" num="1">
+                    <Block title="talent" num="1">
                         Talent Curation<br></br>
                         Creative Direction<br></br>
                         Brand Design & Management<br></br>
                         Media & Promotion<br></br>
                     </Block>
-                    <Block title="Future" svg="cave" num="2">
+                    <Block title="knowledge" num="2">
                         Market Research<br></br>
                         Business Strategy & Logistics<br></br>
                         Acceleration, Scaling and Pivoting<br></br>
                     </Block>
-                    <Block title="Future" svg="asterick" num="3" color={variables['stark-green']}>
+                    <Block title="future" num="3" color={variables['stark-green']}>
                         Web3 Solutions<br></br>
                         Metaverse Integration<br></br>
                         Tech Research, Investment, and Implementation<br></br>
@@ -51,4 +51,4 @@ function Grid() {
     )
 }
 
-export default Grid;
+export default GridSection;

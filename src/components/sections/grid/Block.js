@@ -5,7 +5,7 @@ import FutureIcon from './FutureIcon';
 
 const Block = props => {
     function RenderSVG(props) {
-        switch(props.svg) {
+        switch(props.title) {
             case 'knowledge':
                 return <KnowledgeIcon />
             case 'talent':
@@ -20,7 +20,7 @@ const Block = props => {
         <div className="block-100 block-dotted">
             <div className="block block-title block-25">
                 {props.num ? <div className="block-number">{props.num}</div> : ''}
-                <RenderSVG svg={props.svg} />
+                <RenderSVG title={props.title} />
                 <div className="block-title">{props.title}</div>
             </div>
             <div className="block block-content block-75">

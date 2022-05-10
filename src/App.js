@@ -1,29 +1,29 @@
 import './scss/global.scss';
-import Grid from './components/sections/grid/Grid';
-import HowWeThink from './components/sections/HowWeThink/HowWeThink';
-import Contact from './components/sections/contact/Contact';
-import WeAre from './components/sections/WeAre/WeAre';
-import Minds from './components/Minds';
-import TextLogoStark from './components/TextLogoStark';
-import HowDidWeGetHere from './components/sections/howDidWeGetHere/HowDidWeGetHere';
-import Header from './components/sections/header/Header';
-import Clients from './components/sections/Clients/Clients';
-import Mission from './components/sections/Mission/Mission';
+import GridSection from './components/sections/grid/GridSection';
+import HowWeThinkSection from './components/sections/HowWeThink/HowWeThinkSection';
+import ContactSection from './components/sections/contact/ContactSection';
+import WeAreSection from './components/sections/WeAre/WeAreSection';
+import StickyLogoMinds from './components/common/StickyLogoMinds';
+import StickyLogoStark from './components/common/StickyLogoStark';
+import HowDidWeGetHereSection from './components/sections/howDidWeGetHere/HowDidWeGetHereSection';
+import HeaderSection from './components/sections/header/HeaderSection';
+import ClientsSection from './components/sections/Clients/ClientsSection';
+import MissionSection from './components/sections/Mission/MissionSection';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <HeaderSection />
       <div class="over-bleed">
-        <TextLogoStark />
-        <Minds />
-        <WeAre />
-        <HowDidWeGetHere />
-        <Mission />
-        <Grid />
-        <Clients />
-        <HowWeThink />
-        <Contact />
+        <StickyLogoStark />
+        <StickyLogoMinds />
+        <WeAreSection />
+        <HowDidWeGetHereSection />
+        <MissionSection />
+        <GridSection />
+        <ClientsSection />
+        <HowWeThinkSection />
+        <ContactSection />
       </div>
     </div>
   );
