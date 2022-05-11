@@ -1,0 +1,41 @@
+.sticky-logo-stark,
+.sticky-logo-minds {
+    position: fixed;
+    z-index: 2;
+
+    svg {
+        width: 100%;
+        overflow: visible;
+        filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));
+    }
+
+    #minds-logo {
+        animation-duration: 20s;
+        animation-name: rotatelogo;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+}
+
+@keyframes rotatelogo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sticky-logo-stark {
+    top: 1.5rem;
+    left: 1.25rem;
+}
+
+.sticky-logo-minds {
+    bottom: 1.5rem;
+    right: 1.25rem;
+}

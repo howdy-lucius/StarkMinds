@@ -1,0 +1,71 @@
+
+@import "./variables.scss";
+
+.contact-section {
+    background-color: $stark-red;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h2 {
+        color: $stark-light;
+        font-size: 2.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .email-form {
+        width: 90%;
+        max-width: 750px;
+        border: 6px solid $stark-midgrey;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 1rem 1rem 0 rgb(0 0 0 / 9%);
+        background-color: $stark-light;
+    
+        .email-header {
+            background-color: $stark-midgrey;
+            color: $stark-light;
+            font-size: 1.5rem;
+            font-weight: 900;
+            padding: 0.5rem;
+            display: block;
+            width: 100%;
+            border: 0;
+        }
+    
+        #email-form {
+            border: none;
+            color: $stark-dark;
+            box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+            height: 500px;
+            font-size: 1.25rem;
+            outline: none;
+            overflow: auto;
+            padding: 1rem;
+            width: 100%;
+            resize: none;
+
+            &::placeholder {
+                text-transform: uppercase;
+            }
+        }
+    }
+    
+    .paper-plane {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        width: 3rem;
+        z-index: 2;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+}

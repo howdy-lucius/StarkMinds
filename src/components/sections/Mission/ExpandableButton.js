@@ -4,7 +4,7 @@ const ExpandableButton = (props) => {
     const [buttonOpen, setButtonOpen] = useState(false);
 
     return (
-        <div class={`mission-container block-50 ${buttonOpen && 'container-open'}`} onClick={(e) => {e.preventDefault(); setButtonOpen(!buttonOpen)}}>
+        <div class={`mission-container ${buttonOpen && 'container-open'}`} onClick={(e) => {e.preventDefault(); setButtonOpen(!buttonOpen)}}>
             <button>
                 {props.title}
             </button>

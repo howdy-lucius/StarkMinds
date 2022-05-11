@@ -1,0 +1,47 @@
+.background-globe {
+    animation-duration: 150s;
+    animation-name: rotateglobe;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: absolute;
+    left: -50%;
+    right: -50%;
+
+    @media(min-width: $phone) and (max-width: $tablet) {
+        // between phone and tablet
+        left: -33%;
+        right: -33%;
+    }
+
+    @media(min-width: $tablet) and (max-width: $desktop) {
+        // between tablet and desktop
+        left: -25%;
+        right: -25%;
+    }
+
+    @media(min-width: $desktop) and (max-width: $xl) {
+        // between desktop and xl desktop
+        left: 0;
+        right: 0;
+    }
+
+    @media(min-width: $xl) {
+        // desktop
+        top: -25%;
+        left: 0;
+        right: 0;
+    }
+}
+
+@keyframes rotateglobe {
+    from {
+        transform: rotate(0deg) translate(0, 0) scale(1);
+        opacity: .03;
+    }
+
+    to {
+        transform: rotate(360deg) translate(0, 0) scale(2);
+        opacity: .1;
+    }
+}

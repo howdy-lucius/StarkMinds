@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { PuzzleContext } from '../../../contexts/PuzzleContext';
 import variables from "../../../scss/_exports.module.scss";
 import Canvas from './Canvas';
 import Bomb from './Bomb';
@@ -8,14 +9,20 @@ import DrawingLogo from './DrawingLogo';
 function Puzzle() {
     const [activeClick, setActiveClick] = useState(0);
     const [blowUp, setBlowUp] = useState(false);
+    const { setCompletedPuzzle } = useContext(PuzzleContext);
     const determineClick = (num) => {
-        if (activeClick < 9) {
+        console.log('determineClick', num);
+        if (activeClick < 8) {
             if ((num - activeClick !== 1) && (num - activeClick !== 0)) {
                 // must click next dot in list
                 blowItUp();
             } else {
                 setActiveClick(num);
             }
+        } 
+        if (activeClick === 7 && num === 8) {
+            console.log('puzzle complete');
+            setCompletedPuzzle(true);
         }
     }
 

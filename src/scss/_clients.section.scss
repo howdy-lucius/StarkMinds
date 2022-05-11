@@ -1,0 +1,75 @@
+@import "./variables.scss";
+
+.client-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #f13d3d;
+    align-items: center;
+    display: flex;
+    padding: 8rem;
+    min-height: 900px;
+    flex-direction: column;
+
+    h2 {
+        color: $stark-light;
+        font-size: 4rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .client-block-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .client-block-padding {
+        padding: 2rem;
+    }
+
+    .client-block {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transition: ease all .5s;
+        cursor: pointer;
+        padding: 2rem;
+
+        &.open-drawer {
+            border: 3px solid $stark-dark;
+            border-radius: 1rem;
+            background-color: $stark-light;
+            -webkit-box-shadow: 1rem 1rem 0 0 $stark-dark; 
+            box-shadow: 1rem 1rem 0 0 $stark-dark;
+
+            .client-title {
+                color: $stark-dark;
+            }
+        }
+
+        .client-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            transition: ease all .5s;
+            text-align: center;
+            color: $stark-light;
+            min-height: 9rem;
+        }
+
+        .client-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            
+            svg {
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+
+        .client-description {
+            transition: ease all .5s;
+        }
+
+    }
+}

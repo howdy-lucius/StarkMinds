@@ -1,0 +1,351 @@
+@import "./variables.scss";
+
+@mixin dottedBorder($color: #8f8f8f, $orientation: horizontal, $position: top, $spacing: 5px, $size: 1px) {
+    background-position: $position;
+
+    @if $orientation==horizontal {
+        background-image: linear-gradient(to right, $color $size/$spacing * 100%, rgba(255, 255, 255, 0) 0%);
+        background-size: $spacing $size;
+        background-repeat: repeat-x;
+    }
+
+    @else {
+        background-image: linear-gradient($color $size/$spacing * 100%, rgba(255, 255, 255, 0) 0%);
+        background-size: $size $spacing;
+        background-repeat: repeat-y;
+    }
+
+    .ie9 & {
+        border-#{$position}: 1px dotted $color;
+    }
+}
+
+.grid-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    background-color: $stark-dark;
+    overflow: hidden;
+    max-width: 1080px;
+    margin: 0 auto;
+    transition: all ease .25s;
+    
+    h1,
+    h2,
+    p,
+    marquee,
+    .block-number,
+    .block-title,
+    .block {
+        font-family: 'Share Tech Mono', monospace;
+    }
+
+    .bars-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        .bar {
+            align-self: stretch;
+            flex: 1;
+            cursor: pointer;
+    
+            &:hover,
+            &.active {
+                .inner-bar {
+                    width: 100%;
+                    background-color: $stark-red;
+                }
+            }
+    
+            .inner-bar {
+                width: 2%;
+                height: 100%;
+                align-self: stretch;
+                background-color: $stark-grey;
+                transition: all 2s ease;
+            }
+        }
+    }
+
+    .block {
+
+        &-content {
+            color: $stark-grey;
+            font-size: $p-size;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+
+            p {
+                line-height: 2;
+            }
+        }
+
+        &-decorative {
+            padding: 0;
+            display: flex;
+        }
+
+        &-dotted {
+            @include dottedBorder($stark-light, horizontal, bottom, 5px, 1px);
+
+            &:last-of-type {
+                background-image: none;
+                border-bottom: $border-bottom;
+            }
+        }
+        
+        &-neon {
+            display: none;
+
+            @media(min-width: $tablet) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            border: 1px solid $stark-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $stark-light;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 100%;
+            font-size: 1rem;
+        }
+
+        &-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            color: $stark-light;
+            font-size: 10vw;
+            text-transform: uppercase;
+
+            @media(min-width: $tablet) {
+                font-size: 4vw;
+            }
+
+            @media(min-width: $desktop) {
+                font-size: 2.5vw;
+            }
+        }
+
+        &-title-row {
+            border: $border-bottom;
+        }
+    }
+
+    .grid {
+        margin: 3.5rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    marquee {
+        color: $stark-grey;
+        background-color: $stark-dark;
+        position: absolute;
+        padding: 0.75rem 0;
+        width: 500%;
+        font-size: 1.5rem;
+    
+        @media(min-width: $tablet) {
+            width: 200%;
+        }
+    }
+    
+    .marq {
+        &-top {
+            top: 0;
+        }
+    
+        &-left {
+            top: 100%;
+            transform-origin: left top;
+            transform: rotate(-90deg);
+        }
+    
+        &-right {
+            top: 100%;
+            right: 0;
+            transform-origin: right top;
+            transform: rotate(90deg);
+        }
+    
+        &-bottom {
+            bottom: 0;
+        }
+    }
+
+    h1 {
+        font-family: $noto;
+        font-weight: 900;
+        font-size: 4.25vw;
+    }
+
+    .grid-icon {
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+
+    .grid-sizer {
+        max-width: 1200px;
+        display: flex;
+    }
+    
+    .founded-text {
+        font-size: 3vw;
+        text-transform: none;
+        padding: 0;
+        margin: 0;
+        color: $stark-midgrey;
+    
+        @media(min-width: $tablet) {
+            font-size: 2vw;
+        }
+    
+        @media(min-width: $desktop) {
+            font-size: 2.75vw;
+        }
+    }
+    
+    .founded-subtext {
+        text-transform: none;
+        color: $stark-grey;
+        font-size: 1rem;
+    }
+
+    
+.neon-logo {
+    width: 50%;
+    animation-duration: 5s;
+    animation-name: neon;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    svg {
+        overflow: visible;
+    }
+}
+
+    .neon-glow {
+        filter: blur(10px);
+        animation-duration: 5s;
+        animation-name: neon;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+
+    @keyframes neon {
+        from {
+            opacity: .8;
+        }
+
+        16% {
+            opacity: .8;
+        }
+        19% {
+            opacity: 1;
+        }
+
+        20% {
+            opacity: .3
+        }
+
+        50% {
+            opacity: .3;
+        }
+
+        70% {
+            opacity: .3;
+        }
+
+        73% {
+            opacity: 1;
+        }
+
+        74% {
+            opacity: .3;
+        }
+
+        to {
+            opacity: .8;
+        }
+    }
+    @keyframes glow {
+        from {
+            opacity: .8;
+        }
+
+        16% {
+            opacity: .8;
+        }
+        19% {
+            opacity: 1;
+        }
+
+        20% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        70% {
+            opacity: 0;
+        }
+
+        73% {
+            opacity: 1;
+        }
+
+        74% {
+            opacity: 0;
+        }
+
+        to {
+            opacity: .8;
+        }
+    }
+
+
+    .what-we-do {
+        border-bottom: $border-bottom;
+
+        h2 {
+            color: $stark-grey;
+            font-size: 3vw;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+
+            @media(min-width: $desktop) {
+                font-size: 3vw;
+            }
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            color: $stark-light;
+            font-size: 1.5rem;
+        }
+    }
+}

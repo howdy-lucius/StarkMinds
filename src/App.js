@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './scss/global.scss';
 import GridSection from './components/sections/grid/GridSection';
 import HowWeThinkSection from './components/sections/HowWeThink/HowWeThinkSection';
@@ -9,8 +10,11 @@ import HowDidWeGetHereSection from './components/sections/howDidWeGetHere/HowDid
 import HeaderSection from './components/sections/header/HeaderSection';
 import ClientsSection from './components/sections/Clients/ClientsSection';
 import MissionSection from './components/sections/Mission/MissionSection';
+import {  PuzzleContext } from './contexts/PuzzleContext';
 
 function App() {
+  const [completedPuzzle, setCompletedPuzzle] = useState(false);
+
   return (
     <div className="App">
       <HeaderSection />
@@ -18,12 +22,14 @@ function App() {
         <StickyLogoStark />
         <StickyLogoMinds />
         <WeAreSection />
-        <HowDidWeGetHereSection />
         <MissionSection />
+        <HowDidWeGetHereSection />
         <GridSection />
         <ClientsSection />
-        <HowWeThinkSection />
-        <ContactSection />
+        <PuzzleContext.Provider value={{ completedPuzzle, setCompletedPuzzle }}>
+          <HowWeThinkSection />
+          <ContactSection />
+        </PuzzleContext.Provider>
       </div>
     </div>
   );

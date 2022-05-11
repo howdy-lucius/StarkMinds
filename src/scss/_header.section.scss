@@ -1,0 +1,31 @@
+
+@import "./variables.scss";
+
+.header-section {
+    color: $stark-grey;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: $stark-red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $stark-light;
+
+    h1 {
+        color: $stark-light;
+        font-size: 5rem;
+        margin-top: -2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h1,
+    h3,
+    .stark-logo-animation {
+        z-index: 2;
+    }
+}

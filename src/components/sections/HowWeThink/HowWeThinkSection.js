@@ -11,12 +11,12 @@ function HowWeThinkSection() {
                 Measure Twice, Cut once <br></br>
                 Talk it out, hit the books <br></br>
             </p>
-            <h3>Connect the dots</h3>
+            <h2>Connect the dots</h2>
             <div className="drawing-canvas">
                 <Puzzle />
             </div>
             <p className="if-all-else">If all else fails:</p>
-            <p className="blow-it-up-text">BLOW IT UP AND START OVER</p>
+            <h2 className="blow-it-up-text">BLOW IT UP AND START OVER</h2>
         </div>
     )
 }
