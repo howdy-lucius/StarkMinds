@@ -7,7 +7,7 @@ const PaperPlane = props => {
     // regex is used to preserve line breaks
 
     return(
-        <a className="paper-plane" href={"mailto:jlnelsonart@gmail.com?body=" + props.body.replace(/\r\n|\r|\n/g, "%0D%0A")}>
+        <button type="submit" className="paper-plane">
             <svg id="a" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 36.75 33">
                 <defs>
@@ -21,7 +21,7 @@ const PaperPlane = props => {
                         fill={variables['stark-red']} />
                 </g>
             </svg>
-        </a>
+        </button>
     )
 }
 

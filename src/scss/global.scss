@@ -90,6 +90,10 @@ h1 {
 }
 
 .over-bleed {
-    padding: 3.25rem;
+    padding: 1rem;
     background-color: $stark-grey;
+
+    @media(min-width: $tablet) {
+        padding: 3.25rem;
+    }
 }

@@ -22,13 +22,17 @@
 
 .grid-section {
     position: relative;
-    width: 100%;
+    margin: -1rem;
     display: flex;
     background-color: $stark-dark;
     overflow: hidden;
     max-width: 1080px;
-    margin: 0 auto;
     transition: all ease .25s;
+
+    @media(min-width: $tablet) {
+        width: 100%;
+        margin: 0 auto;
+    }
     
     h1,
     h2,
@@ -74,7 +78,11 @@
             font-size: $p-size;
             display: flex;
             align-items: center;
-            padding: 2rem;
+            padding: 1rem;
+
+            @media(min-width: $tablet) {
+                padding: 2rem;
+            }
 
             p {
                 line-height: 2;
@@ -84,6 +92,11 @@
         &-decorative {
             padding: 0;
             display: flex;
+            min-height: 100px;
+
+            @media(min-width: $tablet) {
+                min-height: unset;
+            }
         }
 
         &-dotted {
@@ -145,22 +158,32 @@
     }
 
     .grid {
-        margin: 3.5rem;
+        margin: 2rem;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+
+        @media(min-width: $tablet) {
+            margin: 2.75rem;
+        }
+
+        @media(min-width: $tablet) {
+            margin: 3.5rem;
+        }
     }
 
     marquee {
         color: $stark-grey;
         background-color: $stark-dark;
         position: absolute;
-        padding: 0.75rem 0;
-        width: 500%;
-        font-size: 1.5rem;
+        padding: 0.25rem 0;
+        width: 300vh;
+        font-size: 1rem;
     
         @media(min-width: $tablet) {
             width: 200%;
+            font-size: 1.5rem;
+            padding: 0.75rem 0;
         }
     }
     
@@ -190,7 +213,15 @@
     h1 {
         font-family: $noto;
         font-weight: 900;
-        font-size: 4.25vw;
+        font-size: 9vw;
+
+        @media(min-width: $tablet) {
+            font-size: 4vw;
+        }
+
+        @media(min-width: $desktop) {
+            font-size: 3rem;
+        }
     }
 
     .grid-icon {
@@ -204,25 +235,34 @@
     }
     
     .founded-text {
-        font-size: 3vw;
+        font-size: 6vw;
         text-transform: none;
         padding: 0;
         margin: 0;
         color: $stark-midgrey;
     
         @media(min-width: $tablet) {
-            font-size: 2vw;
+            font-size: 2.5vw;
         }
     
         @media(min-width: $desktop) {
-            font-size: 2.75vw;
+            font-size: 2rem;
         }
     }
     
     .founded-subtext {
         text-transform: none;
         color: $stark-grey;
-        font-size: 1rem;
+        font-size: 4vw;
+        text-align: center;
+
+        @media(min-width: $tablet) {
+            font-size: 1.5vw;
+        }
+    
+        @media(min-width: $desktop) {
+            font-size: 1rem;
+        }
     }
 
     
@@ -331,13 +371,18 @@
 
         h2 {
             color: $stark-grey;
-            font-size: 3vw;
+            font-size: 10vw;
             text-transform: uppercase;
             margin: 0;
-            padding: 0;
+            padding: 2rem 0;
+            
+            @media(min-width: $tablet) {
+                font-size: 4vw;
+                padding: 0;
+            }
 
             @media(min-width: $desktop) {
-                font-size: 3vw;
+                font-size: 3.5rem;
             }
         }
 

@@ -1,33 +1,60 @@
 @import "./variables.scss";
 
-.mission-container {
-    display: flex;
-    flex-direction: column;
+.mission-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #f13d3d;
     align-items: center;
-    padding: 2rem;
-    transition: ease all .25s;
-    cursor: pointer;
-    margin: 2rem;
+    display: flex;
+    padding: 4rem 2rem;
+    flex-direction: column;
 
-    .mission-desciption {
-        color: $stark-dark;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        font-size: 1.25rem;
-        text-align: center;
-        width: 75%;
+    @media(min-width: $tablet) {
+        padding: 6rem;
+        min-height: 900px;
     }
 
-    button {
-        margin: 0;
-        padding: 1rem 2rem;
-        border-radius: 6px;
-        text-align: center;
-        border: 4px solid $stark-dark;
-        background-color: $stark-dark;
-        color: $stark-red;
-        font-size: 2rem;
-        font-weight: 700;
+    @media(min-width: $desktop) {
+        padding: 8rem;
+    }    
+
+    .mission-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: ease all .25s;
         cursor: pointer;
+        margin-bottom: 2rem;
+
+        @media(min-width: $tablet) {
+            margin-bottom: 4rem;
+        }
+
+        .mission-desciption {
+            color: $stark-dark;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            
+            @media(min-width: $tablet) {
+                width: 85%;
+            }
+        }
+
+        button {
+            margin: 0;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 4px solid $stark-light;
+            background-color: $stark-dark;
+            color: $stark-red;
+            font-size: 2rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
     }
 }

@@ -4,17 +4,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12rem 0;
+    padding: 1rem 0;
     min-height: 15rem;
 
     .react-typewriter-text {
         font-style: italic;
         color: $stark-dark;
-        font-size: 3rem;
+        font-size: 2rem;
         letter-spacing: 0.5rem;
+        text-align: center;
+
+        @media(min-width: $tablet) {
+            font-size: 2.5rem;
+        }
+
+        @media(min-width: $desktop) {
+            font-size: 3rem;
+        }
     }
 
     .react-typewriter-pointer {
         display: none;
+    }
+
+    @media(min-width: $tablet) {
+        padding: 3.25rem 0;
+    }
+
+    @media(min-width: $desktop) {
+        padding: 12rem 0;
     }
 }

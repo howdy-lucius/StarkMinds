@@ -6,30 +6,60 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 1250px;
+    min-height: 100vh;
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
+    
+    @media(min-width: $tablet) {
+        min-height: 1250px;
+    }
+
+    @media(min-width: $desktop) {
+        min-height: 1250px;
+    }
 
     h2 {
         border: 5px solid $stark-grey;
         padding: .5rem 1.5rem;
-        font-size: 3.5rem;
+        font-size: 2.25rem;
         color: $stark-red;
         margin-bottom: 3rem;
         font-weight: 900;
         background-color: $stark-light;
         z-index: 2;
+
+        @media(min-width: $tablet) {
+            font-size: 3.5rem;
+        }
+
+        @media(min-width: $desktop) {
+            font-size: 3.5rem;
+        }
     }
 
     .type-section {
-        width: 50%;
-        min-height: 6rem;
-    
+        width: 90%;
+        min-height: 15rem;
+        
+        @media(min-width: $tablet) {
+            width: 50%;
+            width: 50%;
+
+        }
+
         .react-typewriter-text {
             text-align: center;
             color: $stark-grey;
-            font-size: 2rem;
+            font-size: 1.5rem;
+
+            @media(min-width: $tablet) {
+                font-size: 1.75rem;
+            }
+    
+            @media(min-width: $desktop) {
+                font-size: 2rem;
+            }
         }
     }
 

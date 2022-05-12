@@ -15,12 +15,22 @@
 
     h1 {
         color: $stark-light;
-        font-size: 5rem;
+        font-size: 3rem;
         margin-top: -2rem;
+        transition: $fast-transition;
+
+        @media(min-width: $tablet) {
+            font-size: 5rem;
+        }
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        transition: $fast-transition;
+
+        @media(min-width: $tablet) {
+            font-size: 1.5rem;
+        }
     }
 
     h1,

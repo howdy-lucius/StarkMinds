@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ExpandableButton = (props) => {
-    const [buttonOpen, setButtonOpen] = useState(false);
-
     return (
-        <div class={`mission-container ${buttonOpen && 'container-open'}`} onClick={(e) => {e.preventDefault(); setButtonOpen(!buttonOpen)}}>
+        <div class="mission-container">
             <button>
                 {props.title}
             </button>

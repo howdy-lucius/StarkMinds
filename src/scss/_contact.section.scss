@@ -16,9 +16,12 @@
         text-transform: uppercase;
     }
 
-    .email-form {
+    form {
         width: 90%;
         max-width: 750px;
+    }
+
+    .email-form {
         border: 6px solid $stark-midgrey;
         position: relative;
         overflow: hidden;
