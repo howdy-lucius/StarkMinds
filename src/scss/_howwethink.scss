@@ -10,28 +10,6 @@
     overflow: hidden;
     padding: 4rem 1rem 4rem 1rem;
 
-    &::before {    
-        content: "";
-        background: url('../components/sections/HowWeThink/print.svg') repeat-y;
-        background-size: cover;
-        position: absolute;
-        top: -100vh;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.05;
-        animation: slide 500s linear infinite;
-    }
-
-    @keyframes slide {
-        0% {
-            transform: translate3d(0, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 100vh, 0);
-        }
-    }
-
     @media(min-width: $tablet) {
         padding: 3.25rem;
     }

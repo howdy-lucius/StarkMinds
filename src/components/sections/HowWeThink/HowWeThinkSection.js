@@ -1,5 +1,4 @@
 import Puzzle from './Puzzle';
-import Print from './Print';
 
 function HowWeThinkSection() {
     return (
