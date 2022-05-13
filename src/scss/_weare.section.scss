@@ -20,6 +20,28 @@
         min-height: 1250px;
     }
 
+    &::before {    
+        content: "";
+        background: url('../components/sections/HowWeThink/print.svg') repeat-y;
+        background-size: cover;
+        position: absolute;
+        top: -100vh;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.05;
+        animation: slide 500s linear infinite;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 100vh, 0);
+        }
+    }
+
     h2 {
         border: 5px solid $stark-grey;
         padding: .5rem 1.5rem;

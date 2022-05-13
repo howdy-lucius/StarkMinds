@@ -17,7 +17,6 @@ function HowWeThinkSection() {
                 <p className="if-all-else">If all else fails:</p>
                 <h2 className="blow-it-up-text">BLOW IT UP AND START OVER</h2>
             </div>
-            <Print />
         </div>
     )
 }
