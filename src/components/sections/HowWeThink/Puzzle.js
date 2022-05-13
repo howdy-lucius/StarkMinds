@@ -37,7 +37,7 @@ function Puzzle() {
 
 
     return (
-        <div>
+        <div className="drawing-canvas">
             <div style={{ zIndex: `${activeClick > 7 ? '2': '1'}`}} className="canvas-container">
                 <Canvas />
             </div>
