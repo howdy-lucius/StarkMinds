@@ -33,7 +33,7 @@ const ContactForm = () => {
   return (
     <form ref={form} onSubmit={sendEmail}>
         <div className="email-form">
-            <input className="email-header" type="email" name="email" placeholder="EMAIL"></input>
+            <input className="email-header" type="email" name="email" placeholder="EMAIL ADDRESS:"></input>
             <textarea id="email-form" name="message" placeholder={"your message: Type whatever you want, ask a question, tell a story, present an idea, or just press random keys until you feel satisfied?"}></textarea>
             <PaperPlane/>
         </div>
