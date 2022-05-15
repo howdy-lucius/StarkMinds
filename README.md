@@ -43,3 +43,13 @@ SVG's are used a lot on this homepage. The SVG's are built as components so we c
 Most of the SVG animation is handled with a combination of react properties and css transitions.
 
 The one expectation is the header logo animation, which is handled with the `lottie-react-web` package.
+
+DEPLOYMENT
+-------------
+
+To deploy to AWS
+
+1. `npm run build` to build the production ready site
+2. Use `aws cli` or the AWS S3 Console to upload the code. Please only upload the `build` folder
+3. Set up an EmailJS account
+4. Make sure you have an env file in your s3 bucket with the relevant data (above)
