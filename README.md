@@ -18,6 +18,12 @@ We are using [EmailJS](https://www.emailjs.com/) as an email service. This servi
 
 3.  `REACT_APP_EMAILJS_PUBLIC_KEY`
 
+In the EmailJS portal, you will need to create an email template with the parameters:
+
+1. `email` - the email address
+2. `message` - the email body
+3. `completed_puzzle` - gives a YES or NO based on if the user completed the logo puzzle
+
 ### Marquee
 
 The Grid section of the site features four marquees. Each marquee is a component that is populated with random facts from an array of sayings.

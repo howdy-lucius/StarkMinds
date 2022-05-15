@@ -23,9 +23,10 @@ const ContactForm = () => {
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
       email,
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
-      .then((result) => {
-          console.log('email sent, Thanks!');
+      .then(() => {
+          form.current.reset();
       }, (error) => {
+          form.current.reset();
           console.log(error.text);
       });
   };
